@@ -3,6 +3,7 @@ import { teste1 } from "./controllers/teste1.js";
 import { teste2 } from "./controllers/teste2.js";
 // import { getInfos } from "./APIs/consulta.js";
 import { valorDividendos } from "./APIs/filtraDados.js";
+import { getPriceStock } from "./APIs/preco.js";
 
 export default function routes(fastify, options, done) {
 	// fastify.post("/getInfos", getInfos);
@@ -10,5 +11,6 @@ export default function routes(fastify, options, done) {
 	fastify.get("/teste1", teste1);
 	fastify.post("/", teste2);
 	fastify.get("/dividendos/:ticker", valorDividendos);
+	fastify.post("/price/", getPriceStock);
 	done();
 }
